@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="502.0" maxWidth="937.0" minHeight="502.0" minWidth="937.0" prefHeight="502.0" prefWidth="937.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewReportScreenController">
+   <children>
+      <Label layoutX="434.0" layoutY="35.0" text="Reports">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <TableView fx:id="reportTable" layoutX="385.0" layoutY="105.0" prefHeight="352.0" prefWidth="534.0">
+        <columns>
+          <TableColumn fx:id="typeColumn1" prefWidth="266.0" text="Type" />
+          <TableColumn fx:id="typeColumn2" prefWidth="272.0" text="Appointment Count" />
+        </columns>
+      </TableView>
+      <RadioButton fx:id="typeSortButton" layoutX="118.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#typeSortSelected" text="Type" />
+      <Label layoutX="54.0" layoutY="110.0" text="Sort By:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="typeMonthDropdown" layoutX="197.0" layoutY="106.0" onAction="#typeMonthDropdownChanged" prefWidth="150.0" stylesheets="@style.css" />
+      <RadioButton fx:id="contactSortButton" layoutX="118.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#contactSortButtonClicked" text="Contact" />
+      <ComboBox fx:id="contactDropdown" layoutX="197.0" layoutY="145.0" onAction="#contactDropdownChanged" prefWidth="150.0" stylesheets="@style.css" />
+      <TableView fx:id="reportTable2" layoutX="384.0" layoutY="105.0" prefHeight="352.0" prefWidth="534.0">
+         <columns>
+            <TableColumn fx:id="contactColumn1" prefWidth="23.0" text="ID" />
+            <TableColumn fx:id="contactColumn2" prefWidth="64.0" text="Title" />
+            <TableColumn fx:id="contactColumn3" prefWidth="66.0" text="Type" />
+            <TableColumn fx:id="contactColumn4" prefWidth="71.0" text="Description" />
+            <TableColumn fx:id="contactColumn5" prefWidth="109.0" text="Start Time" />
+            <TableColumn fx:id="contactColumn6" prefWidth="127.0" text="End Time" />
+            <TableColumn fx:id="contactColumn7" prefWidth="73.0" text="Customer ID" />
+         </columns>
+      </TableView>
+      <RadioButton fx:id="loginSortButton" layoutX="118.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#loginSortButtonClicked" text="Logins" />
+      <DatePicker fx:id="loginDatePicker" layoutX="197.0" layoutY="183.0" onAction="#loginDateChanged" prefHeight="25.0" prefWidth="150.0" />
+      <TableView fx:id="loginTable" layoutX="380.0" layoutY="100.0" prefHeight="360.0" prefWidth="540.0">
+         <columns>
+            <TableColumn fx:id="loginColumn1" prefWidth="266.0" text="User" />
+            <TableColumn fx:id="loginColumn2" prefWidth="272.0" text="Time" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

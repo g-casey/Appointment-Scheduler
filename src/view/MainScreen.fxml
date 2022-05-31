@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="800.0" maxWidth="1358.0" minHeight="800.0" minWidth="1358.0" prefHeight="800.0" prefWidth="1358.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+   <children>
+      <Label layoutX="630.0" layoutY="37.0" text="Scheduling">
+         <font>
+            <Font name="Segoe UI Bold" size="19.0" />
+         </font>
+      </Label>
+      <SplitPane layoutX="-2.0" layoutY="104.0" prefHeight="636.0" prefWidth="1352.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="634.0" prefWidth="1185.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="248.0" layoutY="21.0" text="Customers">
+                     <font>
+                        <Font name="Segoe UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="customerTable" layoutX="9.0" layoutY="67.0" prefHeight="514.0" prefWidth="562.0">
+                    <columns>
+                      <TableColumn fx:id="customerColumn1" prefWidth="52.0" text="ID" />
+                        <TableColumn fx:id="customerColumn2" prefWidth="93.0" text="Name" />
+                        <TableColumn fx:id="customerColumn3" minWidth="2.0" prefWidth="153.0" text="Address" />
+                        <TableColumn fx:id="customerColumn4" prefWidth="99.0" text="Postal Code" />
+                        <TableColumn fx:id="customerColumn5" prefWidth="109.0" text="Phone Number" />
+                        <TableColumn fx:id="customerColumn6" prefWidth="55.0" text="Div ID" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="208.0" layoutY="589.0" mnemonicParsing="false" onMouseClicked="#customerAddButtonClicked" stylesheets="@style.css" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="262.0" layoutY="588.0" mnemonicParsing="false" onMouseClicked="#customerModifyButtonClicked" stylesheets="@style.css" text="Modify" textFill="WHITE" />
+                  <Button layoutX="333.0" layoutY="588.0" mnemonicParsing="false" onMouseClicked="#customerDeleteButtonClicked" stylesheets="@style.css" text="Delete" textFill="WHITE" />
+                  <TableView fx:id="appointmentTable" layoutX="582.0" layoutY="67.0" prefHeight="514.0" prefWidth="761.0">
+                     <columns>
+                        <TableColumn fx:id="appointmentColumn1" prefWidth="30.0" text="ID" />
+                        <TableColumn fx:id="appointmentColumn2" prefWidth="47.0" text="Title" />
+                        <TableColumn fx:id="appointmentColumn3" prefWidth="69.0" text="Description" />
+                        <TableColumn fx:id="appointmentColumn4" prefWidth="54.0" text="Location" />
+                        <TableColumn fx:id="appointmentColumn5" prefWidth="51.0" text="Type" />
+                        <TableColumn fx:id="appointmentColumn6" prefWidth="77.0" text="Customer ID" />
+                        <TableColumn fx:id="appointmentColumn7" prefWidth="51.0" text="User ID" />
+                        <TableColumn fx:id="appointmentColumn8" prefWidth="77.0" text="Contact" />
+                        <TableColumn fx:id="appointmentColumn9" prefWidth="158.0" text="Start Time" />
+                        <TableColumn fx:id="appointmentColumn10" prefWidth="146.0" text="End Time" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="903.0" layoutY="21.0" text="Appointments">
+                     <font>
+                        <Font name="Segoe UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="875.0" layoutY="589.0" mnemonicParsing="false" onMouseClicked="#appointmentAddButtonClicked" stylesheets="@style.css" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="933.0" layoutY="588.0" mnemonicParsing="false" onMouseClicked="#appointmentModifyButtonClicked" stylesheets="@style.css" text="Modify" textFill="WHITE" />
+                  <Button layoutX="1009.0" layoutY="588.0" mnemonicParsing="false" onMouseClicked="#appointmentDeleteButtonClicked" stylesheets="@style.css" text="Delete" textFill="WHITE" />
+                  <Button layoutX="1080.0" layoutY="588.0" mnemonicParsing="false" onMouseClicked="#viewReportsButtonClicked" stylesheets="@style.css" text="View Reports" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Label fx:id="userInfo" layoutX="17.0" layoutY="755.0" prefHeight="17.0" prefWidth="214.0" textFill="#0f0fd0" />
+      <Label layoutX="953.0" layoutY="77.0" text="Filter By:">
+         <font>
+            <Font name="Segoe UI Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="monthFilter" layoutX="1064.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#monthFilterClicked" text="Month" />
+      <RadioButton fx:id="weekFilter" layoutX="1132.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#weekFilterClicked" text="Week(M-S)" />
+      <DatePicker fx:id="datePicker" layoutX="1229.0" layoutY="73.0" onAction="#dateSelected" prefHeight="25.0" prefWidth="115.0" />
+      <RadioButton fx:id="allFilter" layoutX="1016.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#allFilterClicked" text="All" />
+      <Label fx:id="alertText" layoutX="1122.0" layoutY="752.0" prefHeight="43.0" prefWidth="214.0" textFill="#0f0fd0" />
+   </children>
+</AnchorPane>

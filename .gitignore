@@ -1,0 +1,7 @@
+# Project exclude paths
+/out/
+/src/database/
+/.idea/
+/JavaDocs
+/src/login_activity.txt
+

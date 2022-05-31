@@ -1,0 +1,20 @@
+.button{
+
+    -fx-background-color: #AEBEE4;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-width: 1px;
+    -fx-border-color: #ffffff;
+}
+
+.combo-box{
+    -fx-background-radius: 15px;
+}
+
+.text-field{
+    -fx-background-radius: 15px
+}
+
+.rightPane{
+     -fx-background-color: #f17171;
+ }
